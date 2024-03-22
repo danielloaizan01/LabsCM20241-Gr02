@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.DatePicker
+import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.Toast
@@ -33,9 +34,15 @@ class PersonalDataActivity : AppCompatActivity(), DatePickerDialog.OnDateSetList
         //CONFIGURACIÓN BOTON SIGUIENTE A DATA CONTACT
         val sigButton: Button = findViewById(R.id.sigButton)
         sigButton.setOnClickListener{
-            val intent = Intent(this, ContactDataActivity::class.java)
-            startActivity(intent)
+            if (validateFields()) {
+                val intent = Intent(this, ContactDataActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Por favor complete todos los campos obligatorios", Toast.LENGTH_SHORT).show()
+            }
         }
+
+        //VALIDACIONES CAMPOS OBLIGATORIOS
 
 
         //CONFIGURACIÓN BOTONES DE HOMBRE / MUJER
@@ -92,6 +99,22 @@ class PersonalDataActivity : AppCompatActivity(), DatePickerDialog.OnDateSetList
         val datePickerButton: Button = findViewById(R.id.datePicker)
         datePickerButton.text = selectedDate
         Toast.makeText(this, "Fecha seleccionada: $selectedDate", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun validateFields(): Boolean {
+        val nombreEditText: EditText = findViewById(R.id.textNombre)
+        val apellidoEditText: EditText = findViewById(R.id.textApellido)
+        val datePickerButton: Button = findViewById(R.id.datePicker)
+
+        val nombre = nombreEditText.text.toString().trim()
+        val apellido = apellidoEditText.text.toString().trim()
+        val fechaNacimiento = datePickerButton.text.toString()
+
+        // Verificar si alguno de los campos obligatorios está vacío
+        if (nombre.isEmpty() || apellido.isEmpty() || fechaNacimiento.isEmpty() || fechaNacimiento == "Fecha Nacimiento") {
+            return false
+        }
+        return true
     }
 
 
