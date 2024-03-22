@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalDataActivity">
+
+    <TextView
+        android:id="@+id/infoPersonal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#191927"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:padding="8sp"
+        android:text="Información Personal"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/textNombre"
+        android:backgroundTint="@android:color/darker_gray"
+        android:ems="30"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="5sp"
+        android:textSize="25sp"
+        android:layout_margin="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoPersonal" />
+
+    <EditText
+        android:id="@+id/textApellido"
+        android:backgroundTint="@android:color/darker_gray"
+        android:ems="30"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Apellidos"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="5sp"
+        android:textSize="25sp"
+        android:layout_margin="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNombre"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/textSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="25sp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:padding="5sp"
+        android:text="Sexo"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textApellido"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <RadioButton
+        android:id="@+id/hombreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="25sp"
+        android:gravity="center"
+        android:padding="5sp"
+        android:text="Hombre"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mujerButton"
+        app:layout_constraintTop_toBottomOf="@+id/textApellido"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <RadioButton
+        android:id="@+id/mujerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="25sp"
+        android:layout_marginEnd="36dp"
+        android:gravity="center"
+        android:padding="5sp"
+        android:text="Mujer"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textApellido"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <TextView
+        android:id="@+id/fechaNacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:padding="5sp"
+        android:text="Fecha Nacimiento"
+        android:layout_marginRight="200dp"
+        android:layout_marginLeft="0dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/datePicker"
+        app:layout_constraintTop_toBottomOf="@+id/textSexo"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/datePicker"
+        style="?android:spinnerStyle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="160dp"
+        android:gravity="center"
+        android:onClick="abriCalendario"
+        android:padding="5sp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mujerButton"
+        app:layout_constraintVertical_bias="0.051" />
+
+
+    <Spinner
+        android:id="@+id/my_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <Button
+        android:id="@+id/sigButton"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:text="Siguiente"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:background="#191927"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_spinner"
+        app:layout_constraintVertical_bias="0.037" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
