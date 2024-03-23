@@ -13,13 +13,16 @@
         android:theme="@style/Theme.AppCompat"
         tools:targetApi="31">
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".ContactDataActivity"
             android:exported="false" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".PersonalDataActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">

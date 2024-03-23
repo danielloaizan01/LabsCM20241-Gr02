@@ -92,12 +92,15 @@ class PersonalDataActivity : AppCompatActivity(), DatePickerDialog.OnDateSetList
 
         }
     }
-
+    //FECHA SELECCIONADA:
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
 
         val selectedDate = "$dayOfMonth/${month + 1}/$year"
         val datePickerButton: Button = findViewById(R.id.datePicker)
         datePickerButton.text = selectedDate
+        if(selectedDate.isEmpty()){
+            datePickerButton.text = "Seleccionar fecha"
+        }
         Toast.makeText(this, "Fecha seleccionada: $selectedDate", Toast.LENGTH_SHORT).show()
     }
 
