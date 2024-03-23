@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".PersonalDataActivity">
 
     <TextView
@@ -33,7 +33,6 @@
         android:layout_height="48dp"
         android:layout_margin="25sp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="96dp"
         android:layout_marginEnd="25dp"
         android:backgroundTint="@android:color/darker_gray"
         android:ems="30"
@@ -45,14 +44,16 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/infoPersonal" />
 
     <EditText
         android:id="@+id/textApellido"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="25sp"
+        android:layout_marginTop="11dp"
         android:backgroundTint="@android:color/darker_gray"
         android:ems="30"
         android:fontFamily="sans-serif-smallcaps"
@@ -71,8 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="25sp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="25dp"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:padding="5sp"
@@ -80,7 +81,7 @@
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/hombreButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textApellido" />
 
     <RadioButton
@@ -88,8 +89,8 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="25sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:padding="5sp"
         android:text="Hombre"
@@ -104,24 +105,23 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="25sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:padding="5sp"
         android:text="Mujer"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/hombreButton"
         app:layout_constraintTop_toBottomOf="@+id/textApellido" />
 
     <TextView
         android:id="@+id/fechaNacimiento"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="25sp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:padding="5sp"
         android:text="Fecha Nacimiento"
@@ -129,82 +129,68 @@
         android:textSize="25sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.664"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hombreButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textApellido" />
 
     <Button
         android:id="@+id/datePicker"
         style="?android:spinnerStyle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_margin="25sp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="25dp"
         android:background="#464653"
         android:gravity="center"
         android:onClick="abriCalendario"
         android:padding="5sp"
+        android:text="Seleccionar "
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:text="Seleccionar fecha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fechaNacimiento" />
+        app:layout_constraintTop_toBottomOf="@+id/textApellido" />
 
     <Spinner
         android:id="@+id/my_spinner"
         android:layout_width="305dp"
         android:layout_height="57dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="29dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+        app:layout_constraintTop_toBottomOf="@+id/textSexo" />
 
     <Button
         android:id="@+id/sigButton"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
         android:layout_margin="25sp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="264dp"
         android:background="#191927"
         android:gravity="center"
         android:text="Siguiente"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_spinner"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintStart_toEndOf="@+id/my_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/fechaNacimiento" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="52dp"
         android:layout_height="55dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toStartOf="@+id/my_spinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintTop_toBottomOf="@+id/textSexo"
         app:srcCompat="@drawable/grado" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="178dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="110dp"
-        app:layout_constraintBottom_toTopOf="@+id/textNombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoPersonal"
-        app:srcCompat="@drawable/hombre" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
