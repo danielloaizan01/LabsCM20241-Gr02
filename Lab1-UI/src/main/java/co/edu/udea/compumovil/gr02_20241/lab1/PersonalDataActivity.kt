@@ -1,9 +1,10 @@
 package co.edu.udea.compumovil.gr02_20241.lab1
 
+
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore.Audio.Radio
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -41,9 +42,6 @@ class PersonalDataActivity : AppCompatActivity(), DatePickerDialog.OnDateSetList
                 Toast.makeText(this, "Por favor complete todos los campos obligatorios", Toast.LENGTH_SHORT).show()
             }
         }
-
-        //VALIDACIONES CAMPOS OBLIGATORIOS
-
 
         //CONFIGURACIÓN BOTONES DE HOMBRE / MUJER
         val hombreButton: RadioButton = findViewById(R.id.hombreButton)
@@ -92,6 +90,7 @@ class PersonalDataActivity : AppCompatActivity(), DatePickerDialog.OnDateSetList
 
         }
     }
+
     //FECHA SELECCIONADA:
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
 
@@ -108,18 +107,28 @@ class PersonalDataActivity : AppCompatActivity(), DatePickerDialog.OnDateSetList
         val nombreEditText: EditText = findViewById(R.id.textNombre)
         val apellidoEditText: EditText = findViewById(R.id.textApellido)
         val datePickerButton: Button = findViewById(R.id.datePicker)
+        val hombreButton: RadioButton = findViewById(R.id.hombreButton)
+        val mujerButton: RadioButton = findViewById(R.id.mujerButton)
+        val spinner: Spinner = findViewById(R.id.my_spinner)
 
         val nombre = nombreEditText.text.toString().trim()
         val apellido = apellidoEditText.text.toString().trim()
         val fechaNacimiento = datePickerButton.text.toString()
+        val sexo = if (hombreButton.isChecked) "Hombre" else if (mujerButton.isChecked) "Mujer" else "Opcional"
+        val nivelAcademico = spinner.selectedItem.toString()
 
         // Verificar si alguno de los campos obligatorios está vacío
         if (nombre.isEmpty() || apellido.isEmpty() || fechaNacimiento.isEmpty() || fechaNacimiento == "Fecha Nacimiento") {
             return false
         }
+
+        // Imprimir los datos en el Logcat
+        Log.d("Informacion personal", "Nombre: $nombre")
+        Log.d("Informacion personal", "Apellido: $apellido")
+        Log.d("Informacion personal", "Fecha de nacimiento: $fechaNacimiento")
+        Log.d("Informacion personal", "Sexo: $sexo")
+        Log.d("Informacion personal", "Nivel academico: $nivelAcademico")
+
         return true
     }
-
-
-
 }
